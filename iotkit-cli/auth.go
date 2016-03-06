@@ -49,7 +49,7 @@ func (p *authLogin) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}
 		return subcommands.ExitFailure
 	}
 
-	fmt.Println(stdout, "\nUser token:", tok)
+	fmt.Fprintln(stdout, "\nUser token:", tok)
 
 	return subcommands.ExitSuccess
 }
