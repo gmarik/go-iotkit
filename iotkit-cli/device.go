@@ -45,7 +45,7 @@ func (p *deviceActivate) Execute(_ context.Context, f *flag.FlagSet, _ ...interf
 		return subcommands.ExitFailure
 	}
 
-	fmt.Fprintf(stdout, "\nDevice Token: ", deviceToken)
+	fmt.Fprintf(stdout, "\nDevice Token: %s", deviceToken)
 
 	return subcommands.ExitSuccess
 }
