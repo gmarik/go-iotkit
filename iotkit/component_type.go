@@ -19,7 +19,7 @@ type ComponentType struct {
 	Dimension string `json:"dimension"`
 
 	// API version  1.0 | 2.0
-	Version string `json: "version"`
+	Version string `json:"version"`
 	// Component Type  sensor | actuator
 	Type string `json:"type"`
 
