@@ -68,7 +68,7 @@ func (dapi *DevicesAPI) ActivateDevice(activationCode string, a Account, d Devic
 		return "", nil, err
 	}
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("Authorization", "Bearer "+d.Token)
+	req.Header.Set("Authorization", "Bearer "+a.Token)
 
 	var ebody struct {
 		DeviceToken string `json:"deviceToken"`

@@ -23,8 +23,9 @@ func (*deviceComponentCreate) Name() string     { return "device:component:creat
 func (*deviceComponentCreate) Synopsis() string { return "create deveice component" }
 func (*deviceComponentCreate) Usage() string {
 	return `
-	device:component:create -account-uuid <aid> -device-uuid <did> -device-token <tok> -type <type> -name <name> -uuid <uuid>
+device:component:create -account-uuid <aid> -device-uuid <did> -device-token <tok> -type <type> -name <name> -uuid <uuid>
 	creates new component for specified account and device
+
 `
 }
 
@@ -47,7 +48,7 @@ func (p *deviceComponentCreate) Execute(_ context.Context, f *flag.FlagSet, _ ..
 		return subcommands.ExitFailure
 	}
 
-	fmt.Fprintf(stdout, "\nComponent[%s] created.", p.Component.ID)
+	fmt.Fprintf(stdout, "Component %q created.", p.Component.ID)
 
 	return subcommands.ExitSuccess
 }
