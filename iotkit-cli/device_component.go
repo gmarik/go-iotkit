@@ -36,7 +36,7 @@ func (p *deviceComponentCreate) SetFlags(f *flag.FlagSet) {
 	f.StringVar(&p.Device.Token, "device-token", "", "device JWT token")
 
 	f.StringVar(&p.Component.ID, "uuid", "", "component uuid identifier")
-	f.StringVar(&p.Component.Type, "type", "custom.v1.0", "component type: ie 'custom.v1.0'")
+	f.StringVar(&p.Component.Type, "type", "custom.v1.0", "component type:  [custom.v1.0|temperature.v1.0|humidity.v1.0|powerswitch.v1.0]")
 	f.StringVar(&p.Component.Name, "name", "", "component name")
 }
 
