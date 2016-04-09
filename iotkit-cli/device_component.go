@@ -23,7 +23,7 @@ func (*deviceComponentCreate) Name() string     { return "device:component:creat
 func (*deviceComponentCreate) Synopsis() string { return "create deveice component" }
 func (*deviceComponentCreate) Usage() string {
 	return `
-device:component:create -account-uuid <aid> -device-uuid <did> -device-token <tok> -type <type> -name <name> -uuid <uuid>
+device:component:create -type <type> -name <name> -uuid <uuid> -account-uuid <aid> -device-uuid <did> -device-token <tok>
 	creates new component for specified account and device
 
 `
@@ -41,7 +41,6 @@ func (p *deviceComponentCreate) SetFlags(f *flag.FlagSet) {
 }
 
 func (p *deviceComponentCreate) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}) subcommands.ExitStatus {
-	// TODO: generate Component UUID
 	_, err := p.client.CreateComponent(p.Component, p.Device, p.Account)
 	if err != nil {
 		fmt.Fprintln(stderr, err)

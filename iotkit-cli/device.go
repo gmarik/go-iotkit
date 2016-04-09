@@ -21,11 +21,11 @@ type deviceActivate struct {
 }
 
 func (*deviceActivate) Name() string     { return "device:activate" }
-func (*deviceActivate) Synopsis() string { return "activate device and return device token" }
+func (*deviceActivate) Synopsis() string { return "activate device and return the device token" }
 func (*deviceActivate) Usage() string {
 	return `
-device:activate -account-uuid <aid> -device-uuid <did> -activation-code <code>
-	activates device and returns device token
+device:activate -activation-code <code> -account-uuid <account-id> -account-token <account-tok> -device-uuid <device-id>
+	activates device and returns the device token
 
 `
 }
