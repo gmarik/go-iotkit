@@ -36,6 +36,7 @@ func main() {
 	subcommands.Register(&deviceComponentCreate{client: client}, "")
 	subcommands.Register(&deviceActivate{client: client}, "")
 	subcommands.Register(&observationCreate{client: client}, "")
+	subcommands.Register(&uuidGen{}, "")
 	// subcommands.Register(&componentTypeCreate{client: client}, "")
 
 	flag.Parse()
