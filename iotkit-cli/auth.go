@@ -36,7 +36,7 @@ func (p *authLogin) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}
 		return subcommands.ExitUsageError
 	}
 
-	fmt.Fprint(stdout, "Password:")
+	fmt.Fprint(stderr, "Password:")
 	buf, err := terminal.ReadPassword(int(stdin.Fd()))
 	if err != nil {
 		fmt.Fprintln(stderr, err)
