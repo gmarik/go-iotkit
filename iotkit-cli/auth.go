@@ -19,15 +19,15 @@ type authLogin struct {
 }
 
 func (*authLogin) Name() string     { return "auth:login" }
-func (*authLogin) Synopsis() string { return "get the authenticate tocken" }
+func (*authLogin) Synopsis() string { return "get the authenticate token" }
 func (*authLogin) Usage() string {
-	return `auth:login -user <name>
+	return `auth:login -user <email>
 	asks for a password, requests auth token and prints it
 `
 }
 
 func (p *authLogin) SetFlags(f *flag.FlagSet) {
-	f.StringVar(&p.username, "user", "", "username")
+	f.StringVar(&p.username, "user", "", "user account's email address")
 }
 
 func (p *authLogin) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}) subcommands.ExitStatus {
